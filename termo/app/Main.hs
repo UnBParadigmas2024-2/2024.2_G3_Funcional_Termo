@@ -1,12 +1,17 @@
 module Main where
 
+import Game (runGame)
+
 main :: IO ()
 main = do
-    putStrLn "Digite 'i' para imprimir 'Hello, Haskell!' ou 'p' para imprimir 'Olá, Haskell!':"
+    -- Limpando tela
+    putStrLn "\ESC[2J"
+
+    putStrLn "Digite 'i' para imprimir 'Hello, Haskell!' ou 'p' para jogar Termo:"
     input <- getLine
     if input == "i" then
         putStrLn "Hello, Haskell!"
     else if input == "p" then
-        putStrLn "Olá, Haskell!"
+        runGame
     else
         putStrLn "Entrada inválida. Por favor, digite 'i' ou 'p'."

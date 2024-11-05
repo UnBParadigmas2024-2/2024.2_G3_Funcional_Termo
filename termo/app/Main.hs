@@ -14,23 +14,32 @@ main = do
     putStrLn "░░░██║░░░ ███████╗ ██║░░██║ ██║░╚═╝░██║ ╚█████╔╝"
     putStrLn "░░░╚═╝░░░ ╚══════╝ ╚═╝░░╚═╝ ╚═╝░░░░░╚═╝ ░╚════╝░"
 
-    showMenu
-
-showMenu :: IO ()
-showMenu = do
-    putStrLn ""
+        putStrLn ""
     putStrLn "════════════════════════════════════════════════"
     putStrLn ""
 
+showMenu
+
+
+showMenu :: IO ()
+showMenu = do
     putStrLn "Escolha uma opção:"
     putStrLn "1. Jogar"
     putStrLn "2. Ver as regras"
-    putStrLn ""
-
+    
     input <- getLine
-    if input == "i" then
-        putStrLn "Hello, Haskell!"
-    else if input == "p" then
+    if input == "1" then
         runGame
-    else
-        putStrLn "Entrada inválida. Por favor, digite 'i' ou 'p'."
+    else if input == "2" then do
+      showRules
+      showMenu
+    else do
+        putStrLn "Entrada inválida. Por favor, digite '1' ou '2'."
+      putStrLn ""
+      showMenu
+
+
+showRules :: IO ()
+showRules = do
+    putStrLn "Placeholder"
+    putStrLn ""

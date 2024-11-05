@@ -39,7 +39,7 @@ handleInput input
     | input == "3" = putStrLn "Saindo do jogo. Te vejo na próxima!"
     | otherwise = do
         putStrLn ""
-        putStrLn "Entrada inválida. Por favor, digite '1' ou '2'."
+        putStrLn "Entrada inválida. Por favor, digite '1', '2' ou '3'."
         putStrLn ""
         showMenu
 

@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY . .
 
+RUN cabal update
+
 RUN cabal install --only-dependencies
 
 RUN cabal build

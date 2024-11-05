@@ -14,32 +14,35 @@ main = do
     putStrLn "░░░██║░░░ ███████╗ ██║░░██║ ██║░╚═╝░██║ ╚█████╔╝"
     putStrLn "░░░╚═╝░░░ ╚══════╝ ╚═╝░░╚═╝ ╚═╝░░░░░╚═╝ ░╚════╝░"
 
-        putStrLn ""
-    putStrLn "════════════════════════════════════════════════"
-    putStrLn ""
-
-showMenu
-
+    showMenu
 
 showMenu :: IO ()
 showMenu = do
+    putStrLn ""
+    putStrLn "════════════════════════════════════════════════"
+    putStrLn ""
     putStrLn "Escolha uma opção:"
     putStrLn "1. Jogar"
     putStrLn "2. Ver as regras"
-    
-    input <- getLine
-    if input == "1" then
-        runGame
-    else if input == "2" then do
-      showRules
-      showMenu
-    else do
-        putStrLn "Entrada inválida. Por favor, digite '1' ou '2'."
-      putStrLn ""
-      showMenu
+    putStrLn ""
 
+    input <- getLine
+    handleInput input
+
+handleInput :: String -> IO ()
+handleInput input
+    | input == "1" = runGame
+    | input == "2" = do
+        showRules
+        showMenu
+    | otherwise = do
+        putStrLn ""
+        putStrLn "Entrada inválida. Por favor, digite '1' ou '2'."
+        putStrLn ""
+        showMenu
 
 showRules :: IO ()
 showRules = do
-    putStrLn "Placeholder"
-    putStrLn ""
+  putStrLn ""
+  putStrLn "Placeholder"
+  putStrLn ""

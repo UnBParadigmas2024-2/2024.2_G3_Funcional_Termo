@@ -1,5 +1,6 @@
 module Main where
 
+import System.Console.ANSI (setSGR, Color(..), ColorIntensity(..), ConsoleLayer(..), SGR(..))
 import Game (runGame)
 
 main :: IO ()
@@ -7,12 +8,15 @@ main = do
     -- Limpando tela
     putStrLn "\ESC[2J"
 
+-- Exibindo o título em cores
+    setSGR [SetColor Foreground Vivid Cyan]
     putStrLn "████████╗ ███████╗ ██████╗░ ███╗░░░███╗ ░█████╗░"
     putStrLn "╚══██╔══╝ ██╔════╝ ██╔══██╗ ████╗░████║ ██╔══██╗"
     putStrLn "░░░██║░░░ █████╗░░ ██████╔╝ ██╔████╔██║ ██║░░██║"
     putStrLn "░░░██║░░░ ██╔══╝░░ ██╔══██╗ ██║╚██╔╝██║ ██║░░██║"
     putStrLn "░░░██║░░░ ███████╗ ██║░░██║ ██║░╚═╝░██║ ╚█████╔╝"
     putStrLn "░░░╚═╝░░░ ╚══════╝ ╚═╝░░╚═╝ ╚═╝░░░░░╚═╝ ░╚════╝░"
+    setSGR [Reset]
 
     showMenu
 

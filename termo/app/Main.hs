@@ -7,7 +7,26 @@ main = do
     -- Limpando tela
     putStrLn "\ESC[2J"
 
-    putStrLn "Digite 'i' para imprimir 'Hello, Haskell!' ou 'p' para jogar Termo:"
+    putStrLn "████████╗ ███████╗ ██████╗░ ███╗░░░███╗ ░█████╗░"
+    putStrLn "╚══██╔══╝ ██╔════╝ ██╔══██╗ ████╗░████║ ██╔══██╗"
+    putStrLn "░░░██║░░░ █████╗░░ ██████╔╝ ██╔████╔██║ ██║░░██║"
+    putStrLn "░░░██║░░░ ██╔══╝░░ ██╔══██╗ ██║╚██╔╝██║ ██║░░██║"
+    putStrLn "░░░██║░░░ ███████╗ ██║░░██║ ██║░╚═╝░██║ ╚█████╔╝"
+    putStrLn "░░░╚═╝░░░ ╚══════╝ ╚═╝░░╚═╝ ╚═╝░░░░░╚═╝ ░╚════╝░"
+
+    showMenu
+
+showMenu :: IO ()
+showMenu = do
+    putStrLn ""
+    putStrLn "════════════════════════════════════════════════"
+    putStrLn ""
+
+    putStrLn "Escolha uma opção:"
+    putStrLn "1. Jogar"
+    putStrLn "2. Ver as regras"
+    putStrLn ""
+
     input <- getLine
     if input == "i" then
         putStrLn "Hello, Haskell!"

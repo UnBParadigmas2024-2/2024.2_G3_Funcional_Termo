@@ -103,3 +103,4 @@ Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não es
 - [Jogo Termo](https://term.ooo)
 - [Cabal User Guide](https://cabal.readthedocs.io/en/stable/)
 - [Docker](https://www.docker.com)
+- [ANSI Terminal](https://hackage.haskell.org/package/ansi-terminal-0.5.0/docs/System-Console-ANSI.html)

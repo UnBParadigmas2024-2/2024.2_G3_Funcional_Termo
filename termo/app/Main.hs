@@ -53,8 +53,8 @@ showRules :: IO ()
 showRules = do
   putStrLn ""
   putStrLn "Regras do Jogo:"
-  putStrLn "    Descubra a palavra certa em até 6 tentativas."
-  putStrLn "    Depois de cada tentativa, você verá o quão perto está da solução."
+  putStrLn " Descubra a palavra certa em até 6 tentativas."
+  putStrLn " Depois de cada tentativa, você verá o quão perto está da solução."
   putStrLn $ "  Se a letra selecionada estiver no lugar correto, ela ficará " ++ green ++ "verde" ++ reset ++ "."
   putStrLn $ "  Se a letra estiver na palavra, mas no lugar errado, ela ficará " ++ yellow ++ "amarela" ++ reset ++ "."
   putStrLn $ "  Se a letra não estiver na palavra, ela ficará " ++ red ++ "vermelha" ++ reset ++ "."

@@ -1,7 +1,8 @@
 module Attempt
     (
         getAttempt,
-        isValidAttempt
+        isValidAttempt,
+        isValidLength
     ) where
 
 import System.IO(openFile, hClose, hIsEOF, hGetLine, Handle, IOMode(..))
@@ -37,6 +38,10 @@ isValidAttempt sword = do
             if elem sword (words line)
                 then return True
             else readLines file
+
+-- Verifica se o tamanho da palavra está correto
+isValidLength :: String -> Bool
+isValidLength str = length str == 5
 
 -- TODO: Issue 9
 -- Aqui talvez seja melhor passar o data inteiro de gameState e retornar ele modificado (Relacioando com a Issue 2)

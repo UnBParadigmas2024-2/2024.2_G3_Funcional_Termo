@@ -2,7 +2,8 @@ module Attempt
     (
         getAttempt,
         isValidAttempt,
-        isValidLength
+        isValidLength,
+        wordValidation
     ) where
 
 import System.IO(openFile, hClose, hIsEOF, hGetLine, Handle, IOMode(..))
@@ -22,7 +23,7 @@ getAttempt = do
 
 -- Verifica se a palavra de entrada existe no banco de palavras
 isValidAttempt :: String -> IO Bool
-isValidAttempt sword = do
+isValidAttempt attempt = do
     file <- openFile "Words.txt" ReadMode
     result <- readLines file
     hClose file
@@ -35,13 +36,25 @@ isValidAttempt sword = do
             then return False
         else do    
             line <- hGetLine file
-            if elem sword (words line)
+            if elem attempt (words line)
                 then return True
             else readLines file
 
 -- Verifica se o tamanho da palavra está correto
 isValidLength :: String -> Bool
 isValidLength str = length str == 5
+
+-- Mostra mensagens de erro
+wordValidation :: String -> IO()
+wordValidation sword = do
+    if not (isValidLength sword) then
+        putStrLn "\ESC[31m Erro:\ESC[32m\ESC[0m A palavra deve conter extamente 5 letras."
+    else do
+        isValid <- isValidAttempt sword;
+        if not isValid then
+            putStrLn "\ESC[31m Erro:\ESC[32m\ESC[0m Palavra inexistente."
+        else 
+            return ()
 
 -- TODO: Issue 9
 -- Aqui talvez seja melhor passar o data inteiro de gameState e retornar ele modificado (Relacioando com a Issue 2)

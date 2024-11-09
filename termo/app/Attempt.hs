@@ -1,5 +1,5 @@
 module Attempt where
-
+import Control.Monad (when)  
 import Data.Char (toLower)
 
 -- Função para verificar a presença de uma letra e sua posição na palavra secreta
@@ -24,6 +24,22 @@ buildFeedback secretWord attempt = [feedbackChar i | i <- [0 .. length attempt -
               in if found == 1 then '>'  -- Letra está na palavra, mas em posição errada
                  else 'x'                -- Letra não está na palavra secreta
 
+
+exibirMensagemFeedback :: String -> String -> IO ()
+exibirMensagemFeedback _ feedback
+    | all (== '^') feedback = return () 
+    | otherwise = do
+        let numIncorretas = length [c | c <- feedback, c == 'x']
+        let numParcialmenteIncorretas = length [c | c <- feedback, c == '>']
+
+        when (numIncorretas > 0) $
+            putStrLn (show numIncorretas ++ " letras incorretas")
+
+        when (numParcialmenteIncorretas > 0) $
+            putStrLn (show numParcialmenteIncorretas ++ " letras estão corretas mas na posição errada")
+
+        putStrLn "Tente novamente"
+        
 -- TODO: Issue 5
 showAttemptNum :: Int -> IO ()
 showAttemptNum attemptNum = do
@@ -42,5 +58,6 @@ processAttempt secretWord attempt = do
     let lowercaseSecret = map toLower secretWord   -- Converte a palavra secreta para minúsculas
         lowercaseAttempt = map toLower attempt      -- Converte a tentativa para minúsculas
         feedback = buildFeedback lowercaseSecret lowercaseAttempt
-    putStrLn feedback
+    exibirMensagemFeedback lowercaseAttempt feedback
+
     return (lowercaseSecret == lowercaseAttempt)  -- Retorna True se a tentativa for igual à palavra secreta

@@ -1,6 +1,17 @@
-module Words where
+module Words (loadWords, getSecretWord) where
 
--- TODO: Issue 8
+import System.Random (randomRIO)
+
+-- Função para carregar as palavras de um arquivo
+loadWords :: FilePath -> IO [String]
+loadWords filename = do
+    contents <- readFile filename
+    return (lines contents)
+
+-- Função para obter uma palavra secreta aleatória
 getSecretWord :: IO String
 getSecretWord = do
-    return "TESTE"
+    words <- loadWords "Words.txt"
+    index <- randomRIO (0, length words - 1)
+    return (words !! index)
+

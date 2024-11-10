@@ -1,43 +1,30 @@
 module Game where
 
-import Attempt (showAttemptNum, getAttempt, processAttempt)
+import LetterStatus (LetterStatus(..))
+import Words (getSecretWord)
+import Attempt (showAttemptNum, getAttempt, getUppercaseInput, processAttempt)
 import Words (getSecretWord)
 import Menu (showScore)
-
+import System.Console.ANSI (setSGR, SGR(SetColor, Reset), ColorIntensity(Vivid), Color(..), ConsoleLayer(Foreground))
 
 runGame :: IO ()
 runGame = do
-    -- Variáveis globais do jogo
-    -- TODO: Issue 2
     secretWord <- getSecretWord
     let maxAttempts = 6
-
-    -- Loop do jogo
     loopGame secretWord maxAttempts
-
-
 
 loopGame :: String -> Int -> IO ()
 loopGame secretWord attemptNum = do
-    -- Limpando tela
-    -- putStrLn "\ESC[2J"
-
-    -- Exibindo tentativas restantes na tela
     showAttemptNum attemptNum
+    attempt <- getUppercaseInput
+    processAttempt secretWord attempt
 
-    -- Recebendo input do jogador
-    attempt <- getAttempt
-
-    -- Processando tentativa
-    rightAns <- processAttempt secretWord attempt
-
-    -- Verificando se o jogo acabou
-    if rightAns then do
+    if attempt == secretWord then do
         showScore secretWord attemptNum
         return ()
     else do
         let newAttemptNum = attemptNum - 1
         if newAttemptNum <= 0 then do
-            showScore secretWord attemptNum
+            showScore secretWord 0 
             return ()
         else loopGame secretWord newAttemptNum

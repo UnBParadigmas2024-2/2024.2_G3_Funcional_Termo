@@ -1,6 +1,6 @@
 module Attempt where
 
-import Data.Char (toLower)
+import Data.Char (toLower, toUpper)
 
 -- Função para verificar a presença de uma letra e sua posição na palavra secreta
 containsElem :: Char -> String -> (Int, Int)
@@ -34,6 +34,11 @@ getAttempt :: IO String
 getAttempt = do
     line <- getLine
     return (map toLower line)  -- Converte a entrada do usuário para minúsculas
+
+getUppercaseInput :: IO String
+getUppercaseInput = do
+    line <- getLine
+    return (map toUpper line)
 
 -- TODO: Issue 9
 -- Função que processa a tentativa e gera o feedback

@@ -2,10 +2,13 @@ module Game where
 
 import LetterStatus (LetterStatus(..))
 import Words (getSecretWord)
+import Attempt (showAttemptNum, getAttempt, getUppercaseInput, processAttempt)
+import Words (getSecretWord)
+import Menu (showScore)
 import System.Console.ANSI (setSGR, SGR(SetColor, Reset), ColorIntensity(Vivid), Color(..), ConsoleLayer(Foreground))
 
 statusToColor :: LetterStatus -> Color
-statusToColor NoExist = Red
+statusToColor NoExist = Black
 statusToColor RightPlace = Green
 statusToColor WrongPlace = Yellow
 statusToColor _ = White 
@@ -36,16 +39,16 @@ runGame = do
 
 loopGame :: String -> Int -> IO ()
 loopGame secretWord attemptNum = do
-    putStrLn ("Tentativa " ++ show attemptNum ++ ":")
-    attempt <- getLine
+    showAttemptNum attemptNum
+    attempt <- getUppercaseInput
     processAndPrintAttempt secretWord attempt
 
     if attempt == secretWord then do
-        putStrLn "\nVocê acertou! Parabéns!"
+        showScore secretWord attemptNum
         return ()
     else do
         let newAttemptNum = attemptNum - 1
         if newAttemptNum <= 0 then do
-            putStrLn "\nVocê não acertou. Fim de jogo!"
+            showScore secretWord attemptNum
             return ()
         else loopGame secretWord newAttemptNum

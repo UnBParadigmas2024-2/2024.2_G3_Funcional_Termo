@@ -69,12 +69,38 @@ cabal build
 cabal run
 ```
 
-### **TO-DO**: Prints do menu do jogo e dos comandos.
-
 ## Uso 
-Explique como usar seu projeto.
-Procure ilustrar em passos, com apoio de telas do software, seja com base na interface gráfica, seja com base no terminal.
-Nessa seção, deve-se revelar de forma clara sobre o funcionamento do software.
+
+### Utilizando os comandos da sessão anterior, é possível subir e rodar o jogo:
+
+![image](https://github.com/user-attachments/assets/62f3392e-4da1-4224-af34-11d35c90341e)
+
+### As opções iniciais do jogo aparecerão da seguinte forma, e o jogador poderá interagir através de inputs no terminal:
+
+![image](https://github.com/user-attachments/assets/2ae6b80f-75f1-484a-9fe0-fe2990978d73)
+
+### Visualizando as regras:
+
+![image](https://github.com/user-attachments/assets/3e284aa7-0fd0-48c1-9d9c-8326e4794380)
+
+### Jogando:
+
+#### Ganhando 😁
+
+![image](https://github.com/user-attachments/assets/9c775d66-c8a9-44c8-84a5-b1355600b8bd)
+
+#### Perdendo 😞
+
+![image](https://github.com/user-attachments/assets/b7f1f25e-e73e-4a11-b059-b0fa31f0afae)
+
+### Saindo do jogo:
+![image](https://github.com/user-attachments/assets/acf34010-2f38-45e8-bc52-fd6d602daf9a)
+
+### Após ter buildado o jogo pela primeira vez com o `make`, é possível utilizar o comando `make run` para jogar novamente!
+
+![image](https://github.com/user-attachments/assets/ab1f62e3-6e2d-47f5-bd8a-7eb37e5a171c)
+
+![image](https://github.com/user-attachments/assets/e0aef641-a927-4733-a7f7-fb6e666949ca)
 
 ## Vídeo
 Adicione 1 ou mais vídeos com a execução do projeto.
@@ -90,12 +116,12 @@ TEMPO: +/- 15min
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) | Comprobatórios (ex. links para commits)
 | -- | -- | -- | -- |
-| Luciano  |  Coordenação do grupo, divisão das tasks e contribuição em código | Excelente | [Função runGame Inicial] (https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/13)
-| Amanda  |  Configuração do ambiente de desenvolvimento, contribuição em código | Excelente | [Configuração Inicial] (https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/12), [Menu do Jogo](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/14)
-| Natan  | Contribuição em código | Boa | [Processamento do input] (https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/15)
-| Felipe  | Contribuição em código | Boa | [Feedback com cores nas palavras] (https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/17)
-| Lais  | Contribuição em código | Boa | [Configuração das cores e tentativas de acerto] (https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/16)
-| Luiz Henrique  | Contribuição em código | Boa | [Gerencimento da escolha aleatória de palavras] (https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/23)
+| Luciano  |  Coordenação do grupo, divisão das tasks e contribuição em código | Excelente | [Função runGame Inicial](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/13)
+| Amanda  |  Configuração do ambiente de desenvolvimento, contribuição em código | Excelente | [Configuração Inicial](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/12), [Menu do Jogo](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/14), [Padronização de cores](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/29)
+| Natan  | Contribuição em código | Boa | [Processamento do input](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/15)
+| Felipe  | Contribuição em código | Boa | [Feedback com cores nas palavras](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/17)
+| Lais  | Contribuição em código | Boa | [Configuração das cores e tentativas de acerto](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/16)
+| Luiz Henrique  | Contribuição em código | Boa | [Gerencimento da escolha aleatória de palavras](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/23)
 
 
 ## Outros 

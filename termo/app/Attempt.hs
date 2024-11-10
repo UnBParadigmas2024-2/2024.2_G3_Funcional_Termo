@@ -6,7 +6,9 @@ module Attempt
         wordValidation
     ) where
 
-import System.IO(openFile, hClose, hIsEOF, hGetLine, Handle, IOMode(..))
+import Data.Char(toUpper)
+
+import System.IO(openFile, hClose, hIsEOF, hGetContents, Handle, IOMode(..))
 
 -- TODO: Issue 5
 showAttemptNum :: Int -> IO ()
@@ -25,20 +27,10 @@ getAttempt = do
 isValidAttempt :: String -> IO Bool
 isValidAttempt attempt = do
     file <- openFile "Words.txt" ReadMode
-    result <- readLines file
-    hClose file
-    return result
- where
-    readLines :: Handle -> IO Bool
-    readLines file = do
-        eof <- hIsEOF file
-        if eof
-            then return False
-        else do    
-            line <- hGetLine file
-            if elem attempt (words line)
-                then return True
-            else readLines file
+    content <- hGetContents file
+    if elem (map toUpper attempt) (words content)
+            then return True
+    else return False
 
 -- Verifica se o tamanho da palavra está correto
 isValidLength :: String -> Bool

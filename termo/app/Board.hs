@@ -37,6 +37,13 @@ updateAlphabetStatus :: Alphabet -> String -> String -> Alphabet
 updateAlphabetStatus alphabet secretWord attempt = map updateLetter alphabet
   where
     statuses = zip attempt (zipWith (compareLetters secretWord) secretWord attempt)
-    updateLetter (ch, _) = case lookup ch statuses of
-        Just (_, status) -> (ch, status)
-        Nothing -> (ch, Untested) 
+
+    prioritize :: LetterStatus -> LetterStatus -> LetterStatus
+    prioritize oldStatus newStatus
+      | oldStatus == RightPlace = RightPlace
+      | oldStatus == WrongPlace && newStatus /= RightPlace = WrongPlace
+      | otherwise = newStatus
+
+    updateLetter (ch, oldStatus) = case lookup ch statuses of
+        Just (_, newStatus) -> (ch, prioritize oldStatus newStatus)
+        Nothing -> (ch, oldStatus)

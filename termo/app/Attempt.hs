@@ -1,5 +1,5 @@
 module Attempt where
-
+import Colors (red, reset)  -- Importa as variáveis red e reset de colors
 import Data.Char (toLower)
 
 -- Função para verificar a presença de uma letra e sua posição na palavra secreta
@@ -27,7 +27,10 @@ buildFeedback secretWord attempt = [feedbackChar i | i <- [0 .. length attempt -
 -- TODO: Issue 5
 showAttemptNum :: Int -> IO ()
 showAttemptNum attemptNum = do
-    putStrLn ("Tentativa " ++ show attemptNum)
+    putStrLn ("")
+    putStrLn ("Tentativas restantes: " ++ red ++ show attemptNum ++ reset)
+    putStrLn ("")
+
 
 -- TODO: Issue 7
 getAttempt :: IO String

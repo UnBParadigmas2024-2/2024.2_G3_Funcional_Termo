@@ -15,7 +15,7 @@ statusToColor _ = White
 printStyledLetter :: (Char, LetterStatus) -> IO ()
 printStyledLetter (ch, status) = do
     setSGR [SetColor Foreground Vivid (statusToColor status)]
-    putStr [ch]
+    putStr [ch, ' ']
     setSGR [Reset]
 
 -- Função que compara as letras e retorna o status
@@ -35,18 +35,6 @@ containsElemAux _ [] _ = (0, -1)  -- Retorna -1 se o caractere não está presen
 containsElemAux c (x:xs) index
     | c == x    = (1, index)
     | otherwise = containsElemAux c xs (index + 1)
-
--- Função que constrói o feedback de acordo com as regras especificadas
-buildFeedback :: String -> String -> String
-buildFeedback secretWord attempt = [feedbackChar i | i <- [0 .. length attempt - 1]]
-  where
-    feedbackChar i =
-      let c = attempt !! i
-      in if i < length secretWord && c == secretWord !! i
-         then '^'                       -- Letra está na posição correta
-         else let (found, _) = containsElem c secretWord
-              in if found == 1 then '>'  -- Letra está na palavra, mas em posição errada
-                 else 'x'                -- Letra não está na palavra secreta
 
 -- TODO: Issue 5
 showAttemptNum :: Int -> IO ()

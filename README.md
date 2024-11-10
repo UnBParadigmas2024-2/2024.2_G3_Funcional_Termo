@@ -124,12 +124,25 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Luiz Henrique  | Contribuição em código | Boa | [Gerencimento da escolha aleatória de palavras](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/23)
 
 
-## Outros 
-Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
+## Informações 
+<!-- Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
 (i) Lições Aprendidas;
 (ii) Percepções;
 (iii) Contribuições e Fragilidades, e
-(iV) Trabalhos Futuros.
+(iV) Trabalhos Futuros. -->
+
+### Lições Aprendidas
+#### **TO-DO**
+
+### Percepções
+#### **TO-DO**
+
+### Contribuições e Fragilidades
+#### **TO-DO**
+<!-- Jogo nao reiniciar automaticamente ao acabar uma partida, uso das cores despadronizado -->
+
+### Trabalhos Futuros
+#### **TO-DO**
 
 ## Fontes
 - [Jogo Termo](https://term.ooo)

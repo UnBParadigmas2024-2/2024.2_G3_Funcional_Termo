@@ -8,3 +8,10 @@ loadWords filename = do
     contents <- readFile filename
     return (lines contents)
 
+-- Função para obter uma palavra secreta aleatória
+getSecretWord :: IO String
+getSecretWord = do
+    words <- loadWords "Words.txt"
+    index <- randomRIO (0, length words - 1)
+    return (words !! index)
+

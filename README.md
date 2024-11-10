@@ -90,7 +90,13 @@ TEMPO: +/- 15min
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) | Comprobatórios (ex. links para commits)
 | -- | -- | -- | -- |
-| Fulano  |  Programação dos Fatos da Base de Conhecimento Lógica | Boa | Commit tal (com link)
+| Luciano  |  Coordenação do grupo, divisão das tasks e contribuição em código | Excelente | [Função runGame Inicial] (https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/13)
+| Amanda  |  Configuração do ambiente de desenvolvimento, contribuição em código | Excelente | [Configuração Inicial] (https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/12), [Menu do Jogo](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/14)
+| Natan  | Contribuição em código | Boa | [Processamento do input] (https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/15)
+| Felipe  | Contribuição em código | Boa | [Feedback com cores nas palavras] (https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/17)
+| Lais  | Contribuição em código | Boa | [Configuração das cores e tentativas de acerto] (https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/16)
+| Luiz Henrique  | Contribuição em código | Boa | [Gerencimento da escolha aleatória de palavras] (https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/23)
+
 
 ## Outros 
 Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:

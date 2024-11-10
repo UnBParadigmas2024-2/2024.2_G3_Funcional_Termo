@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY . .
 
+COPY Words.txt /app/Words.txt
+
 RUN cabal update
 
 RUN cabal install --only-dependencies

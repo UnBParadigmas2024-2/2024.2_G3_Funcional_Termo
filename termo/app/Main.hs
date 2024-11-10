@@ -1,8 +1,7 @@
 module Main where
 
-import System.Console.ANSI (setSGR, Color(..), ColorIntensity(..), ConsoleLayer(..), SGR(..))
 import Game (runGame)
-import Colors (green, yellow, red, reset) -- Importa as cores utilizadas no showRules
+import Colors (green, yellow, red, purple, reset) -- Importa as cores utilizadas no showRules
 
 
 main :: IO ()

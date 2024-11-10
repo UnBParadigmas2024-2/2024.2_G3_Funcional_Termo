@@ -49,6 +49,6 @@ loopGame secretWord attemptNum = do
     else do
         let newAttemptNum = attemptNum - 1
         if newAttemptNum <= 0 then do
-            showScore secretWord attemptNum
+            showScore secretWord 0 
             return ()
         else loopGame secretWord newAttemptNum

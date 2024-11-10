@@ -1,7 +1,16 @@
-module Attempt where
+module Attempt
+    (
+        getAttempt,
+        isValidAttempt,
+        isValidLength,
+        wordValidation
+    ) where
+
+import System.IO(openFile, hClose, hIsEOF, hGetContents, Handle, IOMode(..))
+import Data.Char(toUpper, toLower)
+import Colors (red, reset)  -- Importa as variáveis red e reset de colors
 
 import Data.Char (toLower, toUpper)
-import Colors (red, reset)  -- Importa as variáveis red e reset de colors
 import System.Console.ANSI (setSGR, SGR(SetColor, Reset), ColorIntensity(Vivid), Color(..), ConsoleLayer(Foreground))
 import LetterStatus (LetterStatus(..))
 
@@ -50,12 +59,36 @@ getAttempt = do
     line <- getLine
     return (map toLower line)  -- Converte a entrada do usuário para minúsculas
 
+-- Verifica se a palavra de entrada existe no banco de palavras
+isValidAttempt :: String -> IO Bool
+isValidAttempt attempt = do
+    file <- openFile "Words.txt" ReadMode
+    content <- hGetContents file
+    if elem (map toUpper attempt) (words content)
+            then return True
+    else return False
+
+-- Verifica se o tamanho da palavra está correto
+isValidLength :: String -> Bool
+isValidLength str = length str == 5
+
+-- Mostra mensagens de erro
+wordValidation :: String -> IO()
+wordValidation sword = do
+    if not (isValidLength sword) then
+        putStrLn "\ESC[31m Erro:\ESC[32m\ESC[0m A palavra deve conter extamente 5 letras."
+    else do
+        isValid <- isValidAttempt sword;
+        if not isValid then
+            putStrLn "\ESC[31m Erro:\ESC[32m\ESC[0m Palavra inexistente."
+        else 
+            return ()
+
 getUppercaseInput :: IO String
 getUppercaseInput = do
     line <- getLine
     return (map toUpper line)
 
--- TODO: Issue 9
 -- Função que processa a tentativa e gera o feedback
 processAttempt :: String -> String -> IO Bool
 processAttempt secretWord attempt = do

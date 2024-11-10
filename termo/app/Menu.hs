@@ -7,6 +7,6 @@ showScore secretWord attemptNum
         putStrLn "Voce perdeu :("
         putStrLn ("A palavra secreta era: " ++ secretWord)
     | otherwise = do
-        putStrLn "Parabéns, vocé ganhou!"
+        putStrLn "Parabéns, você ganhou!"
         putStrLn ("A palavra secreta era: " ++ secretWord)
         putStrLn ("Sua pontuação foi: " ++ show (400 + attemptNum*100))

@@ -1,43 +1,67 @@
 module Game where
 
-import Attempt (showAttemptNum, getAttempt, processAttempt)
+import LetterStatus (LetterStatus(..))
 import Words (getSecretWord)
+import Attempt (showAttemptNum, getUppercaseInput, processAttempt)
 import Menu (showScore)
+import System.Console.ANSI (setSGR, SGR(SetColor, Reset), ColorIntensity(Vivid), Color(..), ConsoleLayer(Foreground))
 
+-- Tipo e inicialização do alfabeto
+type Alphabet = [(Char, LetterStatus)]
 
+initAlphabet :: Alphabet
+initAlphabet = [(c, Untested) | c <- ['a'..'z']]
+
+-- Estrutura de dados para guardar o estado do jogo
+data GameState = GameState
+    { secretWord :: String           -- Palavra secreta
+    , numAttemptsLeft :: Int         -- Número de tentativas restantes
+    , attempts :: [String]           -- Lista de tentativas feitas pelo jogador
+    } deriving (Show)
+
+-- Função principal do jogo
 runGame :: IO ()
 runGame = do
-    -- Variáveis globais do jogo
-    -- TODO: Issue 2
-    secretWord <- getSecretWord
-    let maxAttempts = 6
+    -- Obtendo a palavra secreta
+    secret <- getSecretWord
 
-    -- Loop do jogo
-    loopGame secretWord maxAttempts
+    -- Inicializando o estado do jogo
+    let initialGameState = GameState
+            { secretWord = secret
+            , numAttemptsLeft = 6
+            , attempts = []        -- Nenhuma tentativa foi feita ainda
+            }
 
+    -- Iniciando o loop do jogo com o estado inicial
+    loopGame initialGameState
 
+-- Loop principal do jogo
+loopGame :: GameState -> IO ()
+loopGame gameState = do
+    let attemptsLeft = numAttemptsLeft gameState
+        secret = secretWord gameState
+        previousAttempts = attempts gameState
 
-loopGame :: String -> Int -> IO ()
-loopGame secretWord attemptNum = do
-    -- Limpando tela
-    -- putStrLn "\ESC[2J"
+    -- Exibindo tentativas restantes
+    showAttemptNum attemptsLeft
 
-    -- Exibindo tentativas restantes na tela
-    showAttemptNum attemptNum
+    -- Recebendo a tentativa do jogador
+    attempt <- getUppercaseInput
 
-    -- Recebendo input do jogador
-    attempt <- getAttempt
+    -- Processando a tentativa
+    processAttempt secret attempt
 
-    -- Processando tentativa
-    rightAns <- processAttempt secretWord attempt
+    -- Atualizando o estado do jogo
+    let updatedGameState = gameState
+            { numAttemptsLeft = attemptsLeft - 1
+            , attempts = previousAttempts ++ [attempt]
+            }
 
-    -- Verificando se o jogo acabou
-    if rightAns then do
-        showScore secretWord attemptNum
+    -- Verificando o estado do jogo
+    if attempt == secret then do
+        showScore secret attemptsLeft
         return ()
-    else do
-        let newAttemptNum = attemptNum - 1
-        if newAttemptNum <= 0 then do
-            showScore secretWord attemptNum
-            return ()
-        else loopGame secretWord newAttemptNum
+    else if numAttemptsLeft updatedGameState <= 0 then do
+        showScore secret 0
+        return ()
+    else loopGame updatedGameState

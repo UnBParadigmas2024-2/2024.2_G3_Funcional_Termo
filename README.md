@@ -1,4 +1,4 @@
-# HaskellGame
+# Termo
 
 **Disciplina**: FGA0210 - PARADIGMAS DE PROGRAMAÇÃO - T01 <br>
 **Nro do Grupo**: 03<br>
@@ -28,10 +28,48 @@ Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcioname
 
 ## Instalação 
 **Linguagens**: Haskell<br>
-**Tecnologias**: xxxxxx<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
-Insira um manual ou um script para auxiliar ainda mais.
-Gifs animados e outras ilustrações são bem-vindos!
+**Tecnologias**: Cabal<br>
+
+Para jogar é necessário entrar no diretório `termo`:
+
+```bash
+cd termo
+```
+
+E subir a aplicação:
+
+```bash
+make
+```
+
+Ao rodar esse comando, é iniciado o processo de criação e execução da imagem docker, permitindo que o usuário interaja com o jogo pelo terminal.
+
+
+O comando `make` só precisa ser executado uma única vez para incializar o container, caso o projeto não tenha sido modificado, nas próximas execuções basta rodar:
+
+```bash
+make run
+```
+
+Este comando apenas executará a imagem já criada.
+
+Ao final, caso não queira mais jogar, basta rodar o seguinte comando para limpar a imagem Docker:
+
+```bash
+make clean
+```
+
+---
+
+Também é possível usar o Cabal para executar o projeto:
+
+```bash
+cabal build
+
+cabal run
+```
+
+### **TO-DO**: Prints do menu do jogo e dos comandos.
 
 ## Uso 
 Explique como usar seu projeto.
@@ -62,5 +100,7 @@ Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não es
 (iV) Trabalhos Futuros.
 
 ## Fontes
-Referencie, adequadamente, as referências utilizadas.
-Indique ainda sobre fontes de leitura complementares.
+- [Jogo Termo](https://term.ooo)
+- [Cabal User Guide](https://cabal.readthedocs.io/en/stable/)
+- [Docker](https://www.docker.com)
+- [ANSI Terminal](https://hackage.haskell.org/package/ansi-terminal-0.5.0/docs/System-Console-ANSI.html)

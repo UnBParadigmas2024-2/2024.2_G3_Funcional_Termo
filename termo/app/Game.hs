@@ -20,7 +20,7 @@ runGame = do
 loopGame :: String -> Int -> IO ()
 loopGame secretWord attemptNum = do
     -- Limpando tela
-    putStrLn "\ESC[2J"
+    -- putStrLn "\ESC[2J"
 
     -- Exibindo tentativas restantes na tela
     showAttemptNum attemptNum

@@ -1,8 +1,11 @@
 module Game where
 
-import Attempt (showAttemptNum, getAttempt, processAttempt)
+import LetterStatus (LetterStatus(..))
+import Words (getSecretWord)
+import Attempt (showAttemptNum, getAttempt, getUppercaseInput, processAttempt)
 import Words (getSecretWord)
 import Menu (showScore)
+import System.Console.ANSI (setSGR, SGR(SetColor, Reset), ColorIntensity(Vivid), Color(..), ConsoleLayer(Foreground))
 
 -- Definição correta da estrutura LetterStatus
 data LetterStatus = Untested | NoExist | WrongPlace | RightPlace
@@ -47,6 +50,8 @@ loopGame secretWord attemptNum = do
 
     -- Exibindo tentativas restantes
     showAttemptNum attemptNum
+    attempt <- getUppercaseInput
+    processAttempt secretWord attempt
 
     -- Recebendo a tentativa do jogador
     attempt <- getAttempt
@@ -55,12 +60,12 @@ loopGame secretWord attemptNum = do
     rightAns <- processAttempt secretWord attempt
 
     -- Verificando o estado do jogo
-    if rightAns then do
+    if attempt == secretWord then do
         showScore secretWord attemptNum
         return ()
     else do
         let newAttemptNum = attemptNum - 1
         if newAttemptNum <= 0 then do
-            showScore secretWord attemptNum
+            showScore secretWord 0 
             return ()
         else loopGame secretWord newAttemptNum

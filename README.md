@@ -73,34 +73,33 @@ cabal run
 
 ### Utilizando os comandos da sessão anterior, é possível subir e rodar o jogo:
 
-![image](https://github.com/user-attachments/assets/62f3392e-4da1-4224-af34-11d35c90341e)
+![image](docs/config.png)
 
 ### As opções iniciais do jogo aparecerão da seguinte forma, e o jogador poderá interagir através de inputs no terminal:
 
-![image](https://github.com/user-attachments/assets/2ae6b80f-75f1-484a-9fe0-fe2990978d73)
+![image](docs/menu.png)
 
 ### Visualizando as regras:
 
-![image](https://github.com/user-attachments/assets/3e284aa7-0fd0-48c1-9d9c-8326e4794380)
+![image](docs/regras.png)
 
 ### Jogando:
 
 #### Ganhando 😁
 
-![image](https://github.com/user-attachments/assets/9c775d66-c8a9-44c8-84a5-b1355600b8bd)
+![image](docs/vitoria.png)
 
 #### Perdendo 😞
 
-![image](https://github.com/user-attachments/assets/b7f1f25e-e73e-4a11-b059-b0fa31f0afae)
+![image](docs/derrota.png)
 
 ### Saindo do jogo:
-![image](https://github.com/user-attachments/assets/acf34010-2f38-45e8-bc52-fd6d602daf9a)
+![image](docs/saindo.png)
 
 ### Após ter buildado o jogo pela primeira vez com o `make`, é possível utilizar o comando `make run` para jogar novamente!
 
-![image](https://github.com/user-attachments/assets/ab1f62e3-6e2d-47f5-bd8a-7eb37e5a171c)
+![image](docs/make.png)
 
-![image](https://github.com/user-attachments/assets/e0aef641-a927-4733-a7f7-fb6e666949ca)
 
 <!-- ## Vídeo
 Adicione 1 ou mais vídeos com a execução do projeto.

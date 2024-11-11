@@ -35,7 +35,9 @@ showMenu = do
 
 handleInput :: String -> IO ()
 handleInput input
-    | input == "1" = runGame
+    | input == "1" = do 
+        runGame
+        showMenu
     | input == "2" = do
         showRules
         showMenu

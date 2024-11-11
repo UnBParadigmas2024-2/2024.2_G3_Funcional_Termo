@@ -2,7 +2,7 @@ module Game where
 
 import LetterStatus (LetterStatus(..))
 import Words (getSecretWord)
-import Attempt (showAttemptNum, getUppercaseInput, processAttempt)
+import Attempt (showAttemptNum, getAttempt, processAttempt, wordValidation)
 import Menu (showScore)
 import Board (printBoard, printAlphabetStatus, updateAlphabetStatus, processAndPrintAttempt)
 
@@ -49,7 +49,7 @@ loopGame gameState = do
     showAttemptNum (7 - currentAttemptNum)
 
     -- Recebendo a tentativa do jogador
-    attempt <- getUppercaseInput
+    attempt <- getAttempt
 
     -- Processando a tentativa
     processAttempt secret attempt

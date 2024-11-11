@@ -57,7 +57,7 @@ showAttemptNum attemptNum = do
 getAttempt :: IO String
 getAttempt = do
     line <- getLine
-    return (map toLower line)  -- Converte a entrada do usuário para minúsculas
+    return (map toUpper line)
 
 -- Verifica se a palavra de entrada existe no banco de palavras
 isValidAttempt :: String -> IO Bool
@@ -83,11 +83,6 @@ wordValidation sword = do
             putStrLn "\ESC[31m Erro:\ESC[32m\ESC[0m Palavra inexistente."
         else 
             return ()
-
-getUppercaseInput :: IO String
-getUppercaseInput = do
-    line <- getLine
-    return (map toUpper line)
 
 -- Função que processa a tentativa e gera o feedback
 processAttempt :: String -> String -> IO Bool

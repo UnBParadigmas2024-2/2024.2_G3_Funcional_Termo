@@ -102,7 +102,7 @@ cabal run
 
 ![image](https://github.com/user-attachments/assets/e0aef641-a927-4733-a7f7-fb6e666949ca)
 
-## Vídeo
+<!-- ## Vídeo
 Adicione 1 ou mais vídeos com a execução do projeto.
 Procure: 
 (i) Introduzir o projeto;
@@ -110,7 +110,7 @@ Procure:
 (iii) Apresentar particularidades do Paradigma, da Linguagem, e das Tecnologias, e
 (iV) Apresentar lições aprendidas, contribuições, pendências, e ideias para trabalhos futuros.
 OBS: TODOS DEVEM PARTICIPAR, CONFERINDO PONTOS DE VISTA.
-TEMPO: +/- 15min
+TEMPO: +/- 15min -->
 
 ## Participações
 
@@ -118,14 +118,15 @@ Aqui está a tabela com os nomes em ordem alfabética:
 
 | Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) | Comprobatórios |
 | -- | -- | -- | -- |
-| Amanda | Configuração do ambiente de desenvolvimento, contribuição em código | Excelente | [Configuração Inicial](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/12), [Menu do Jogo](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/14), [Padronização de cores](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/29), [Documentação](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/27) |
-| Felipe | Contribuição em código | Boa | [Feedback com cores nas palavras](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/17) |
-| Guilherme | Programação da atualização da interface, exibição do jogo e revisões de código | Boa | [Atualização da Interface e Exibição de Jogo](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/26) |
+| Amanda Nobre| Configuração do ambiente de desenvolvimento, contribuição em código | Excelente | [Configuração Inicial](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/12), [Menu do Jogo](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/14), [Padronização de cores](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/29), [Documentação](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/27) |
+| Felipe Pereira | Contribuição em código | Boa | [Feedback com cores nas palavras](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/17) |
+| Gabriel Sabanai| Contribuição em código | Boa | [Estado do Jogo](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/18) |
+| Guilherme Barbosa| Programação da atualização da interface, exibição do jogo e revisões de código | Boa | [Atualização da Interface e Exibição de Jogo](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/26) |
 | Ingrid Carvalho | Contribuição em código | Boa | [Configuração da mensagem de feedback da tentativa](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/19) |
-| Lais | Contribuição em código | Boa | [Configuração das cores e tentativas de acerto](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/16) |
-| Luciano | Coordenação do grupo, divisão das tasks e contribuição em código | Excelente | [Função runGame Inicial](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/13) |
+| Lais Portela | Contribuição em código | Boa | [Configuração das cores e tentativas de acerto](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/16) |
+| Luciano Ricardo| Coordenação do grupo, divisão das tasks e contribuição em código | Excelente | [Função runGame Inicial](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/13) |
 | Luiz Henrique | Contribuição em código e documentação | Boa | [Gerenciamento da escolha aleatória de palavras](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/23), [Documentação](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/27),  [Filtro Base](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/issues/31) |
-| Natan | Contribuição em código | Boa | [Processamento do input](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/15), [Documentação](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/27) |
+| Natan Tavares | Contribuição em código | Boa | [Processamento do input](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/15), [Documentação](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/27) |
 | Pablo Christianno | Contribuição em código | Boa | [Leitura e validação da palavra de entrada (input)](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/24) |
 
 

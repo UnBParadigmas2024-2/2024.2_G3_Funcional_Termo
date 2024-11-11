@@ -123,6 +123,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Lais  | Contribuição em código | Boa | [Configuração das cores e tentativas de acerto](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/16)
 | Luiz Henrique  | Contribuição em código | Boa | [Gerencimento da escolha aleatória de palavras](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/23)
 | Guilherme  | Programação da atualização da interface, exibição do jogo e revisões de código | Boa | [Atualização da Interface e Exibição de Jogo](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/26)
+| Pablo Christianno  | Contribuição em código | Boa | [Leitura e validação da palavra de entrada (input).](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/24)
 
 
 ## Informações 

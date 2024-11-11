@@ -9,6 +9,7 @@ import Board (printBoard, printAlphabetStatus, updateAlphabetStatus, processAndP
 -- Tipo e inicialização do alfabeto
 type Alphabet = [(Char, LetterStatus)]
 
+-- Função para inicializar o alfabeto
 initAlphabet :: Alphabet
 initAlphabet = [(c, Untested) | c <- ['A'..'Z']]
 

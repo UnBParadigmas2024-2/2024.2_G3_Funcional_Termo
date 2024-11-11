@@ -6,6 +6,7 @@ import Attempt (printStyledLetter, compareLetters)
 
 type Alphabet = [(Char, LetterStatus)]
 
+-- Função para exibir o quadro de tentativas
 printBoard :: String -> [String] -> IO ()
 printBoard secretWord attempts = do
     clearScreen
@@ -15,12 +16,14 @@ printBoard secretWord attempts = do
     mapM_ (\attempt -> processAndPrintAttempt secretWord attempt) attempts
     mapM_ (const $ putStrLn emptyLine) [1..(maxAttempts - length attempts)]
 
+-- Função para processar e exibir uma tentativa
 processAndPrintAttempt :: String -> String -> IO ()
 processAndPrintAttempt secretWord attempt = do
     let statuses = zipWith (compareLetters secretWord) secretWord attempt
     mapM_ printStyledLetter statuses
     putStrLn ""
 
+-- Função para exibir o status do alfabeto
 printAlphabetStatus :: Alphabet -> IO ()
 printAlphabetStatus alphabetStatus = do
     let abnt2Order = ["QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"]
@@ -33,6 +36,7 @@ printAlphabetStatus alphabetStatus = do
         putStrLn "") abnt2Order
     putStrLn ""
 
+-- Função para atualizar o status do alfabeto
 updateAlphabetStatus :: Alphabet -> String -> String -> Alphabet
 updateAlphabetStatus alphabet secretWord attempt = map updateLetter alphabet
   where

@@ -1,10 +1,12 @@
 module Attempt where
 
 import Data.Char (toLower, toUpper)
-import Colors (red, reset)  -- Importa as variáveis red e reset de colors
+import Colors (red, reset)
 import System.Console.ANSI (setSGR, SGR(SetColor, Reset), ColorIntensity(Vivid), Color(..), ConsoleLayer(Foreground))
 import LetterStatus (LetterStatus(..))
 
+-- ------------------------------------- Processamento de letras -------------------------------------
+-- Função que mapeia uma cor pra cada status
 statusToColor :: LetterStatus -> Color
 statusToColor NoExist = Black
 statusToColor RightPlace = Green
@@ -26,36 +28,6 @@ compareLetters secretWord secretLetter attemptLetter
     | otherwise = (attemptLetter, NoExist)
 
 
--- Função para verificar a presença de uma letra e sua posição na palavra secreta
-containsElem :: Char -> String -> (Int, Int)
-containsElem c str = containsElemAux c str 0
-
-containsElemAux :: Char -> String -> Int -> (Int, Int)
-containsElemAux _ [] _ = (0, -1)  -- Retorna -1 se o caractere não está presente
-containsElemAux c (x:xs) index
-    | c == x    = (1, index)
-    | otherwise = containsElemAux c xs (index + 1)
-
--- TODO: Issue 5
-showAttemptNum :: Int -> IO ()
-showAttemptNum attemptNum = do
-    putStrLn ("")
-    putStrLn ("Tentativas restantes: " ++ red ++ show attemptNum ++ reset)
-    putStrLn ("")
-
-
--- TODO: Issue 7
-getAttempt :: IO String
-getAttempt = do
-    line <- getLine
-    return (map toLower line)  -- Converte a entrada do usuário para minúsculas
-
-getUppercaseInput :: IO String
-getUppercaseInput = do
-    line <- getLine
-    return (map toUpper line)
-
--- TODO: Issue 9
 -- Função que processa a tentativa e gera o feedback
 processAttempt :: String -> String -> IO Bool
 processAttempt secretWord attempt = do
@@ -65,3 +37,36 @@ processAttempt secretWord attempt = do
     mapM_ printStyledLetter statuses                -- Imprime cada letra com o status colorido
     putStrLn ""
     return (lowercaseSecret == lowercaseAttempt)
+
+
+-- ------------------------------------- Exibindo Tentativas -------------------------------------
+-- Função para obter a tentativa do jogador
+showAttemptNum :: Int -> IO ()
+showAttemptNum attemptNum = do
+    putStrLn ("")
+    putStrLn ("Tentativas restantes: " ++ red ++ show attemptNum ++ reset)
+    putStrLn ("")
+
+
+-- ------------------------------------- Validação de Input -------------------------------------
+-- Função para carregar as palavras do arquivo
+loadWords :: FilePath -> IO [String]
+loadWords filePath = do
+    content <- readFile filePath
+    return (map (map toUpper) (lines content))
+
+-- Função principal que valida e retorna a tentativa em maiúsculas
+getUppercaseInput :: IO String
+getUppercaseInput = do
+    attempt <- getLine
+    validWords <- loadWords "Words.txt"
+    let attemptUpper = map toUpper attempt
+    if isValidLength attemptUpper && attemptUpper `elem` validWords
+        then return attemptUpper
+        else do
+            putStrLn "Erro: Palavra deve ter 5 letras e estar no banco de palavras."
+            getUppercaseInput  -- Pede nova entrada recursivamente
+
+-- Verifica se o tamanho da palavra está correto
+isValidLength :: String -> Bool
+isValidLength str = length str == 5

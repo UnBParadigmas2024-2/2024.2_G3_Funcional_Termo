@@ -3,7 +3,8 @@ module Attempt
         getAttempt,
         isValidAttempt,
         isValidLength,
-        wordValidation
+        wordValidation,
+        validateInput
     ) where
 
 import System.IO(openFile, hClose, hIsEOF, hGetContents, Handle, IOMode(..))
@@ -73,16 +74,29 @@ isValidLength :: String -> Bool
 isValidLength str = length str == 5
 
 -- Mostra mensagens de erro
-wordValidation :: String -> IO()
+wordValidation :: String -> IO Bool
 wordValidation sword = do
-    if not (isValidLength sword) then
-        putStrLn "\ESC[31m Erro:\ESC[32m\ESC[0m A palavra deve conter extamente 5 letras."
+    if not (isValidLength sword) then do
+        putStrLn "\ESC[31m Erro:\ESC[32m\ESC[0m A palavra deve conter exatamente 5 letras."
+        return False
     else do
-        isValid <- isValidAttempt sword;
-        if not isValid then
+        isValid <- isValidAttempt sword
+        if not isValid then do
             putStrLn "\ESC[31m Erro:\ESC[32m\ESC[0m Palavra inexistente."
-        else 
-            return ()
+            return False
+        else return True
+
+-- Validação geral da palavra
+validateInput :: IO String
+validateInput = do
+    word <- getAttempt
+    isValid <- wordValidation word
+    if isValid
+        then return word
+        else do
+            putStrLn "Tente novamente."
+            validateInput
+
 
 -- Função que processa a tentativa e gera o feedback
 processAttempt :: String -> String -> IO Bool

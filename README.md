@@ -23,8 +23,6 @@ Descreva o seu projeto em linhas gerais.
 Use referências, links, que permitam conhecer um pouco mais sobre o projeto.
 Capriche nessa seção, pois ela é a primeira a ser lida pelos interessados no projeto.
 
-## Screenshots
-Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
 
 ## Instalação 
 **Linguagens**: Haskell<br>
@@ -69,14 +67,39 @@ cabal build
 cabal run
 ```
 
-### **TO-DO**: Prints do menu do jogo e dos comandos.
-
 ## Uso 
-Explique como usar seu projeto.
-Procure ilustrar em passos, com apoio de telas do software, seja com base na interface gráfica, seja com base no terminal.
-Nessa seção, deve-se revelar de forma clara sobre o funcionamento do software.
 
-## Vídeo
+### Utilizando os comandos da sessão anterior, é possível subir e rodar o jogo:
+
+![image](docs/config.png)
+
+### As opções iniciais do jogo aparecerão da seguinte forma, e o jogador poderá interagir através de inputs no terminal:
+
+![image](docs/menu.png)
+
+### Visualizando as regras:
+
+![image](docs/regras.png)
+
+### Jogando:
+
+#### Ganhando 😁
+
+![image](docs/vitoria.png)
+
+#### Perdendo 😞
+
+![image](docs/derrota.png)
+
+### Saindo do jogo:
+![image](docs/saindo.png)
+
+### Após ter buildado o jogo pela primeira vez com o `make`, é possível utilizar o comando `make run` para jogar novamente!
+
+![image](docs/make.png)
+
+
+<!-- ## Vídeo
 Adicione 1 ou mais vídeos com a execução do projeto.
 Procure: 
 (i) Introduzir o projeto;
@@ -84,20 +107,54 @@ Procure:
 (iii) Apresentar particularidades do Paradigma, da Linguagem, e das Tecnologias, e
 (iV) Apresentar lições aprendidas, contribuições, pendências, e ideias para trabalhos futuros.
 OBS: TODOS DEVEM PARTICIPAR, CONFERINDO PONTOS DE VISTA.
-TEMPO: +/- 15min
+TEMPO: +/- 15min -->
 
 ## Participações
-Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
-|Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) | Comprobatórios (ex. links para commits)
-| -- | -- | -- | -- |
-| Fulano  |  Programação dos Fatos da Base de Conhecimento Lógica | Boa | Commit tal (com link)
 
-## Outros 
-Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
-(i) Lições Aprendidas;
-(ii) Percepções;
-(iii) Contribuições e Fragilidades, e
-(iV) Trabalhos Futuros.
+Aqui está a tabela com os nomes em ordem alfabética:
+
+| Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) | Comprobatórios |
+| -- | -- | -- | -- |
+| Amanda Nobre| Configuração do ambiente de desenvolvimento, contribuição em código | Excelente | [Configuração Inicial](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/12), [Menu do Jogo](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/14), [Padronização de cores](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/29), [Documentação](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/27) |
+| Felipe Pereira | Contribuição em código | Boa | [Feedback com cores nas palavras](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/17) |
+| Gabriel Sabanai| Contribuição em código | Boa | [Estado do Jogo](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/18) |
+| Guilherme Barbosa| Programação da atualização da interface, exibição do jogo e revisões de código | Boa | [Atualização da Interface e Exibição de Jogo](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/26) |
+| Ingrid Carvalho | Contribuição em código | Boa | [Configuração da mensagem de feedback da tentativa](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/19) |
+| Lais Portela | Contribuição em código | Boa | [Configuração das cores e tentativas de acerto](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/16) |
+| Luciano Ricardo| Coordenação do grupo, divisão das tasks e contribuição em código | Excelente | [Função runGame Inicial](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/13) |
+| Luiz Henrique | Contribuição em código e documentação | Boa | [Gerenciamento da escolha aleatória de palavras](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/23), [Documentação](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/27),  [Filtro Base](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/issues/31) |
+| Natan Tavares | Contribuição em código | Boa | [Processamento do input](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/15), [Documentação](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/27) |
+| Pablo Christianno | Contribuição em código | Boa | [Leitura e validação da palavra de entrada (input)](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/24) |
+
+
+## Informações 
+
+### Lições Aprendidas
+
+Durante a execução do projeto, a equipe aprendeu:
+- A importância de estruturar o código funcional para garantir clareza e manutenibilidade.
+- A aplicabilidade do paradigma funcional, suas vantagens e desvatagens.
+- Como enfrentar desafios de colaboração em equipe, especialmente ao trabalhar em um novo paradigma.
+
+### Percepções
+
+Observamos que implementar algoritmos em um ambiente funcional exige uma abordagem distinta dos paradigmas imperativos, tornando o desenvolvimento um desafio estimulante. Haskell, apesar de ser uma linguagem com uma sintaxe complexa e desafiadora para compreensão e leitura, oferece um grande benefício: seu paradigma funcional altamente modularizado facilita a organização e o desenvolvimento do código. Embora a compilação de arquivos em Haskell seja trabalhosa, a linguagem nos incentiva a adotar uma nova perspectiva, priorizando soluções elegantes e expressivas, o que é uma vantagem valiosa para escrever código conciso e otimizado.
+
+#### Contribuições
+
+Cada membro da equipe contribuiu com incrementos específicos nos módulos e na implementação de novas funcionalidades. Essas atividades foram organizadas por meio de issues, que foram priorizadas levando em consideração as dependências necessárias para sua realização.
+
+#### Fragilidades
+
+Alguns pontos a melhorar incluem o fato jogo não reiniciar automaticamente após o término de uma partida e pequenas despadronizações no uso das cores.
+
+### Trabalhos Futuros
+
+- Melhorar a mecânica do jogo para que ele reinicie automaticamente após uma partida, oferecendo uma experiência contínua para os usuários.
+- Garantir uma padronização de cores e elementos visuais para melhorar a identidade visual e a consistência do projeto.
+- Explorar novas funcionalidades e integrações que possam expandir o escopo do projeto, oferecendo mais opções aos usuários.
+- Realizar otimizações técnicas para melhorar a performance e garantir uma execução mais suave e eficiente.
+- Selecionar melhor as palavras pois há algumas que são difíceis de acertar (Ex: verbos conjugados, nomes próprios, regionalismos, gírias, etc)
 
 ## Fontes
 - [Jogo Termo](https://term.ooo)

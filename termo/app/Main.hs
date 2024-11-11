@@ -1,8 +1,7 @@
 module Main where
 
-import System.Console.ANSI (setSGR, Color(..), ColorIntensity(..), ConsoleLayer(..), SGR(..))
 import Game (runGame)
-import Colors (green, yellow, red, reset) -- Importa as cores utilizadas no showRules
+import Colors (green, yellow, red, purple, reset) -- Importa as cores utilizadas no showRules
 
 
 main :: IO ()
@@ -11,14 +10,12 @@ main = do
     putStrLn "\ESC[2J"
 
 -- Exibindo o título em cores
-    setSGR [SetColor Foreground Vivid Cyan]
-    putStrLn "████████╗ ███████╗ ██████╗░ ███╗░░░███╗ ░█████╗░"
-    putStrLn "╚══██╔══╝ ██╔════╝ ██╔══██╗ ████╗░████║ ██╔══██╗"
-    putStrLn "░░░██║░░░ █████╗░░ ██████╔╝ ██╔████╔██║ ██║░░██║"
-    putStrLn "░░░██║░░░ ██╔══╝░░ ██╔══██╗ ██║╚██╔╝██║ ██║░░██║"
-    putStrLn "░░░██║░░░ ███████╗ ██║░░██║ ██║░╚═╝░██║ ╚█████╔╝"
-    putStrLn "░░░╚═╝░░░ ╚══════╝ ╚═╝░░╚═╝ ╚═╝░░░░░╚═╝ ░╚════╝░"
-    setSGR [Reset]
+    putStrLn $ purple ++ "████████╗ ███████╗ ██████╗░ ███╗░░░███╗ ░█████╗░"
+    putStrLn $ "╚══██╔══╝ ██╔════╝ ██╔══██╗ ████╗░████║ ██╔══██╗"
+    putStrLn $ "░░░██║░░░ █████╗░░ ██████╔╝ ██╔████╔██║ ██║░░██║"
+    putStrLn $ "░░░██║░░░ ██╔══╝░░ ██╔══██╗ ██║╚██╔╝██║ ██║░░██║"
+    putStrLn $ "░░░██║░░░ ███████╗ ██║░░██║ ██║░╚═╝░██║ ╚█████╔╝"
+    putStrLn $ "░░░╚═╝░░░ ╚══════╝ ╚═╝░░╚═╝ ╚═╝░░░░░╚═╝ ░╚════╝░" ++ reset
 
     showMenu
 

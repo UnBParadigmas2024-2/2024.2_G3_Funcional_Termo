@@ -1,6 +1,6 @@
 module Menu where
 
-
+-- Função para exibir o score
 showScore :: String -> Int -> IO ()
 showScore secretWord attemptNum 
     | attemptNum == 0 = do

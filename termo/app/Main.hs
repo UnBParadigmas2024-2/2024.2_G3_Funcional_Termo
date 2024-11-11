@@ -1,7 +1,7 @@
 module Main where
 
 import Game (runGame)
-import Colors (green, yellow, red, purple, reset) -- Importa as cores utilizadas no showRules
+import Colors (green, yellow, gray, purple, reset)
 
 
 main :: IO ()
@@ -9,7 +9,7 @@ main = do
     -- Limpando tela
     putStrLn "\ESC[2J"
 
--- Exibindo o título em cores
+    -- Exibindo o título em cores
     putStrLn $ purple ++ "████████╗ ███████╗ ██████╗░ ███╗░░░███╗ ░█████╗░"
     putStrLn $ "╚══██╔══╝ ██╔════╝ ██╔══██╗ ████╗░████║ ██╔══██╗"
     putStrLn $ "░░░██║░░░ █████╗░░ ██████╔╝ ██╔████╔██║ ██║░░██║"
@@ -50,15 +50,17 @@ handleInput input
 
 showRules :: IO ()
 showRules = do
-  putStrLn ""
-  putStrLn "Regras do Jogo:"
-  putStrLn " Descubra a palavra certa em até 6 tentativas."
-  putStrLn " Depois de cada tentativa, você verá o quão perto está da solução."
-  putStrLn $ "  Se a letra selecionada estiver no lugar correto, ela ficará " ++ green ++ "verde" ++ reset ++ "."
-  putStrLn $ "  Se a letra estiver na palavra, mas no lugar errado, ela ficará " ++ yellow ++ "amarela" ++ reset ++ "."
-  putStrLn $ "  Se a letra não estiver na palavra, ela ficará " ++ red ++ "vermelha" ++ reset ++ "."
-  putStrLn "Bom jogo!"
-  putStrLn ""
-  putStrLn ""
+    -- Limpando tela
+    putStrLn "\ESC[2J"
 
-
+    -- Exibindo regras
+    putStrLn ""
+    putStrLn "Regras do Jogo:"
+    putStrLn " Descubra a palavra certa em até 6 tentativas."
+    putStrLn " Depois de cada tentativa, você verá o quão perto está da solução."
+    putStrLn $ "  Se a letra selecionada estiver no lugar correto, ela ficará " ++ green ++ "verde" ++ reset ++ "."
+    putStrLn $ "  Se a letra estiver na palavra, mas no lugar errado, ela ficará " ++ yellow ++ "amarela" ++ reset ++ "."
+    putStrLn $ "  Se a letra não estiver na palavra, ela ficará " ++ gray ++ "cinza" ++ reset ++ "."
+    putStrLn "Bom jogo!"
+    putStrLn ""
+    putStrLn ""

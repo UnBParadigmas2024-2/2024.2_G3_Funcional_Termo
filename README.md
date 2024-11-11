@@ -23,8 +23,6 @@ Descreva o seu projeto em linhas gerais.
 Use referências, links, que permitam conhecer um pouco mais sobre o projeto.
 Capriche nessa seção, pois ela é a primeira a ser lida pelos interessados no projeto.
 
-## Screenshots
-Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
 
 ## Instalação 
 **Linguagens**: Haskell<br>

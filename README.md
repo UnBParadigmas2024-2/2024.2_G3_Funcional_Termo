@@ -121,7 +121,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Natan  | Contribuição em código | Boa | [Processamento do input](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/15)
 | Felipe  | Contribuição em código | Boa | [Feedback com cores nas palavras](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/17)
 | Lais  | Contribuição em código | Boa | [Configuração das cores e tentativas de acerto](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/16)
-| Luiz Henrique  | Contribuição em código | Boa | [Gerencimento da escolha aleatória de palavras](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/23)
+| Luiz Henrique  | Contribuição em código e documentação | Boa | [Gerencimento da escolha aleatória de palavras](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/23)
 | Guilherme  | Programação da atualização da interface, exibição do jogo e revisões de código | Boa | [Atualização da Interface e Exibição de Jogo](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/26)
 | Pablo Christianno  | Contribuição em código | Boa | [Leitura e validação da palavra de entrada (input).](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/24)
 | Ingrid Carvalho | Contribuição em código | Boa | [Configuração da mensagem de feedback da tentativa](https://github.com/UnBParadigmas2024-2/2024.2_G3_Funcional_Termo/pull/19)
@@ -135,17 +135,32 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 (iV) Trabalhos Futuros. -->
 
 ### Lições Aprendidas
-#### **TO-DO**
+
+Durante a execução do projeto, a equipe aprendeu:
+- A importância de estruturar o código funcional para garantir clareza e manutenibilidade.
+- A aplicabilidade do paradigma funcional, suas vantagens e desvatagens.
+- Como enfrentar desafios de colaboração em equipe, especialmente ao trabalhar em um novo paradigma.
 
 ### Percepções
+
 #### **TO-DO**
 
 ### Contribuições e Fragilidades
-#### **TO-DO**
-<!-- Jogo nao reiniciar automaticamente ao acabar uma partida, uso das cores despadronizado -->
+
+#### Contribuições
+
+Cada membro da equipe contribuiu com incrementos específicos nos módulos e na implementação de novas funcionalidades. Essas atividades foram organizadas por meio de issues, que foram priorizadas levando em consideração as dependências necessárias para sua realização.
+
+#### Fragilidades
+
+Alguns pontos a melhorar incluem o fato jogo não reiniciar automaticamente após o término de uma partida e pequenas despadronizações no uso das cores.
 
 ### Trabalhos Futuros
-#### **TO-DO**
+
+- Melhorar a mecânica do jogo para que ele reinicie automaticamente após uma partida, oferecendo uma experiência contínua para os usuários.
+- Garantir uma padronização de cores e elementos visuais para melhorar a identidade visual e a consistência do projeto.
+- Explorar novas funcionalidades e integrações que possam expandir o escopo do projeto, oferecendo mais opções aos usuários.
+- Realizar otimizações técnicas para melhorar a performance e garantir uma execução mais suave e eficiente.
 
 ## Fontes
 - [Jogo Termo](https://term.ooo)

@@ -139,7 +139,9 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 
 ### Contribuições e Fragilidades
 #### **TO-DO**
-<!-- Jogo nao reiniciar automaticamente ao acabar uma partida, uso das cores despadronizado -->
+<!-- Jogo nao reiniciar automaticamente ao acabar uma partida,
+uso das cores despadronizado,
+palavras muito dificeis (verbos conjugados, nomes próprios, regionalismos, gírias, etc) -->
 
 ### Trabalhos Futuros
 #### **TO-DO**

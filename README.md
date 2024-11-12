@@ -19,10 +19,24 @@
 | 200042416 | Pablo Christianno Silva Guedes    |
 
 ## Sobre 
-Descreva o seu projeto em linhas gerais. 
-Use referências, links, que permitam conhecer um pouco mais sobre o projeto.
-Capriche nessa seção, pois ela é a primeira a ser lida pelos interessados no projeto.
+Este projeto implementa o jogo Termo em Haskell, proporcionando uma experiência interativa e textual. O objetivo do jogador é adivinhar uma palavra secreta de cinco letras em até seis tentativas, utilizando feedback fornecido após cada palpite.
 
+### Funcionalidades:
+
+1. Seleção de Palavra Secreta:
+    - Uma palavra aleatória de cinco letras é escolhida a partir de uma lista pré-definida de palavras válidas.
+2. Interface Textual:
+    - O jogador interage com o jogo através do terminal, inserindo palpites e recebendo feedback.
+3. Feedback para o Jogador:
+    - Letras corretas na posição certa são destacadas com a cor verde.
+    - Letras corretas, mas em posições erradas, recebem a cor amarelo.
+    - Letras incorretas não são destacadas.
+4. Validação de Entradas:
+    - Apenas palavras válidas (cinco letras e pertencentes ao dicionário) são aceitas.
+    - O jogador é solicitado a tentar novamente em caso de entrada inválida.
+5. Condição de Vitória ou Derrota:
+    - O jogo termina com vitória se o jogador adivinhar a palavra dentro do limite de tentativas.
+    - Caso contrário, a palavra secreta é revelada ao final do jogo.
 
 ## Instalação 
 **Linguagens**: Haskell<br>
@@ -66,6 +80,10 @@ cabal build
 
 cabal run
 ```
+
+## Vídeo
+
+![Gif](docs/gameplay.gif)
 
 ## Uso 
 
@@ -150,7 +168,6 @@ Alguns pontos a melhorar incluem o fato jogo não reiniciar automaticamente apó
 
 ### Trabalhos Futuros
 
-- Melhorar a mecânica do jogo para que ele reinicie automaticamente após uma partida, oferecendo uma experiência contínua para os usuários.
 - Garantir uma padronização de cores e elementos visuais para melhorar a identidade visual e a consistência do projeto.
 - Explorar novas funcionalidades e integrações que possam expandir o escopo do projeto, oferecendo mais opções aos usuários.
 - Realizar otimizações técnicas para melhorar a performance e garantir uma execução mais suave e eficiente.
